@@ -1,0 +1,8 @@
+*.csproj
+*.csproj.user
+*.sln
+
+/.vs
+/Library
+/Packages
+/Temp
