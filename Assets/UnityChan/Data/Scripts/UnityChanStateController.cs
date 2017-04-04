@@ -87,7 +87,7 @@ namespace UnityChan
 		// アニメーターのローカル時刻を取得
 		private static float GetTime(Animator animator)
 		{
-			return (float)animator.GetTime();
+			return (animator.playableGraph.rootPlayableCount != 0 ? (float)animator.playableGraph.GetRootPlayable(0).time : 0.0f);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿// Outline shader
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Outline shader
 // アウトラインシェーダ
 
 // Editable parameters
@@ -50,8 +52,8 @@ struct v2f
 // 頂点シェーダ
 v2f vert(appdata_base v)
 {
-	float4 projPos = mul(UNITY_MATRIX_MVP, v.vertex);
-	float4 projNormal = normalize(mul(UNITY_MATRIX_MVP, float4(v.normal, 0)));
+	float4 projPos = UnityObjectToClipPos(v.vertex);
+	float4 projNormal = normalize(UnityObjectToClipPos(float4(v.normal, 0)));
 
 	float distanceToCamera = OUTLINE_DISTANCE_SCALE * projPos.z;
 	float normalScale = _EdgeThickness * 
