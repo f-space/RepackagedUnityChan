@@ -1,7 +1,3 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
 // Character shader
 // Includes falloff shadow and highlight, specular, reflection, and normal mapping
 
