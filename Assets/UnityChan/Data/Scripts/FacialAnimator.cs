@@ -72,13 +72,19 @@ namespace UnityChan
 		// 有効化時
 		private void OnEnable()
 		{
-			animator.SetLayerWeight(layerIndex, 1.0f);
+			if (animator.isActiveAndEnabled)
+			{
+				animator.SetLayerWeight(layerIndex, 1.0f);
+			}
 		}
 
 		// 無効化時
 		private void OnDisable()
 		{
-			animator.SetLayerWeight(layerIndex, 0.0f);
+			if (animator.isActiveAndEnabled)
+			{
+				animator.SetLayerWeight(layerIndex, 0.0f);
+			}
 		}
 
 		// 状態更新
